@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sina Roydel - Software Engineer with expertise in Python, FastAPI, Docker, and Clean Architecture. Available for Remote, Hybrid, and Onsite positions.">
+    <meta name="keywords" content="Sina Roydel, Software Engineer, Python, FastAPI, Docker, Vue, Clean Architecture, Resume, Remote Work, Hybrid Work, Onsite Work, ATS-friendly">
+    <!-- Structured data for better ATS parsing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Sina Roydel",
+      "jobTitle": "Software Engineer",
+      "telephone": "+989178719056",
+      "email": "3inaroydl@gmail.com",
+      "url": "https://github.com/3ina",
+      "sameAs": [
+        "https://www.linkedin.com/in/sina-roydel-3060a2237/",
+        "https://github.com/3ina"
+      ],
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Shiraz",
+          "addressRegion": "Fars",
+          "addressCountry": "Iran"
+        }
+      },
+      "knowsAbout": ["Python", "FastAPI", "Docker", "Vue", "Clean Architecture", "Remote Work", "Hybrid Work", "Onsite Work"]
+    }
+    </script>
+    <meta name="author" content="Sina Roydel">
+    <meta name="robots" content="index, follow">
+    <title>Sina Roydel - Software Engineer Resume</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d3e50',
+                        secondary: '#3498db',
+                        accent: '#1abc9c',
+                        'text-light': '#666',
+                        'text-lighter': '#888',
+                        'light-bg': '#f8f9fa',
+                        'border-color': '#e0e0e0',
+                        'dark-bg': '#121212',
+                        'dark-container': '#1e1e1e',
+                        'dark-border': '#333',
+                    },
+                    fontFamily: {
+                        primary: ['Inter', 'sans-serif'],
+                        secondary: ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom-sm': '0 2px 4px rgba(0,0,0,0.05)',
+                        'custom-md': '0 4px 8px rgba(0,0,0,0.1)',
+                        'custom-lg': '0 8px 16px rgba(0,0,0,0.1)',
+                        'nav': '0 2px 10px rgba(0,0,0,0.1)',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-down': 'slideDown 0.5s ease-in-out',
+                    },
+                    zIndex: {
+                        'nav': '100',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            /* ATS-friendly classes */
+            .job-title {
+                font-weight: bold;
+            }
+            .section-heading::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 80px;
+                height: 3px;
+                @apply bg-secondary;
+            }
+            
+            .list-item::before {
+                content: '▹';
+                position: absolute;
+                left: 0;
+                @apply text-secondary font-bold;
+            }
+            
+            @media print {
+                .list-item::before {
+                    content: '•';
+                }
+                
+                body {
+                    @apply bg-white text-black;
+                    font-size: 12pt;
+                }
+                
+                a {
+                    @apply no-underline text-black;
+                }
+                
+                .print-button {
+                    @apply hidden;
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-gray-800 dark:bg-dark-bg dark:text-gray-200 font-primary text-base leading-relaxed m-0 p-0 scroll-smooth" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" :class="{ 'dark': darkMode }">
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        // Check initial theme
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Theme toggle function
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+        }
+    </script>
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-dark-container shadow-nav z-nav transition-all duration-300 transform animate-slide-down" aria-label="Main navigation">
+        <div class="max-w-[900px] mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#top" class="text-primary dark:text-gray-200 font-bold text-xl flex items-center" aria-label="Sina Roydel">
+                    <i class="fa-solid fa-code mr-2"></i> Sina Roydel
+                </a>
+                <div class="flex items-center space-x-6">
+                    <button @click="darkMode = !darkMode; toggleTheme()" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Toggle theme">
+                        <i class="fa-solid" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                        <span class="sr-only">Toggle Theme</span>
+                    </button>
+                    <a href="#summary" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to summary section">Summary</a>
+                    <a href="#experience" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to experience section">Experience</a>
+                    <a href="#education" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to education section">Education</a>
+                    <a href="#skills" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to skills section">Skills</a>
+                    <a href="#projects" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to projects section">Projects</a>
+                    <a href="#volunteering" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to volunteering section">Volunteering</a>
+                    <!-- <a href="#certifications" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to certifications section">Certifications</a> -->
+                    <!-- <a href="#languages" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors hidden md:block" aria-label="Go to languages section">Languages</a> -->
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors" aria-label="GitHub profile">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="text-text-light dark:text-gray-400 hover:text-secondary transition-colors" aria-label="LinkedIn profile">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top" class="max-w-[900px] mx-auto mt-20 mb-8 p-8 bg-white dark:bg-dark-container shadow-custom-lg rounded-lg animate-fade-in">
+        <header class="text-center py-6 pb-8 border-b-2 border-secondary relative mb-8">
+            <img src="https://i.ibb.co/Rk02Y3zG/photo-5897882566298552284-y.jpg" alt="photo-5897882566298552283-y" alt="Profile picture of Sina Roydel" class="mx-auto mb-4 w-32 h-32 rounded-full object-cover border-4 border-secondary shadow-custom-md" >
+            <h1 class="text-4xl text-primary dark:text-gray-200 mb-4 font-bold tracking-tight">Sina Roydel</h1>
+            <div class="flex justify-center flex-wrap gap-6 my-4 text-base">
+                <span class="inline-flex items-center relative px-4">
+                    <i class="fa-solid fa-location-dot mr-2 text-secondary"></i> Shiraz, Iran
+                </span>
+                <span class="inline-flex items-center relative px-4 before:content-[''] before:absolute before:left-[-8px] before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-1 before:rounded-full before:bg-secondary">
+                    <i class="fa-solid fa-phone mr-2 text-secondary"></i> +989178719056
+                </span>
+                <span class="inline-flex items-center relative px-4 before:content-[''] before:absolute before:left-[-8px] before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-1 before:rounded-full before:bg-secondary">
+                    <i class="fa-solid fa-envelope mr-2 text-secondary"></i> <a href="mailto:3inaroydl@gmail.com" class="hover:text-secondary transition-colors">3inaroydl@gmail.com</a>
+                </span>
+            </div>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-text-light dark:text-gray-400 hover:text-secondary transition-colors" aria-label="GitHub profile">
+                    <i class="fa-brands fa-github mr-2"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-text-light dark:text-gray-400 hover:text-secondary transition-colors" aria-label="LinkedIn profile">
+                    <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section class="my-8 pb-4" id="summary">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-user-tie mr-2 text-secondary"></i> Professional Summary
+            </h2>
+            <p class="text-lg leading-relaxed mb-6">
+               I’m a Software Engineer passionate about building scalable, reliable, and well-architected backend systems. With strong expertise in Python, FastAPI, and Docker, I focus on crafting clean, maintainable code aligned with modern Clean Architecture principles.
+            </p>
+            <!-- <div class="flex flex-wrap gap-2 mt-2 mb-4">
+                <span class="bg-accent/10 text-accent dark:bg-accent/20 px-3 py-1 rounded text-sm font-medium" aria-label="Available for Remote Work"><i class="fa-solid fa-laptop-code mr-1"></i> Available for Remote Work</span>
+                <span class="bg-accent/10 text-accent dark:bg-accent/20 px-3 py-1 rounded text-sm font-medium" aria-label="Available for Hybrid Work"><i class="fa-solid fa-laptop-house mr-1"></i> Available for Hybrid Work</span>
+                <span class="bg-accent/10 text-accent dark:bg-accent/20 px-3 py-1 rounded text-sm font-medium" aria-label="Available for Onsite Work"><i class="fa-solid fa-building mr-1"></i> Available for Onsite Work</span>
+            </div> -->
+        </section>
+
+        <section class="my-8 pb-4" id="experience">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-briefcase mr-2 text-secondary"></i> Work Experience
+            </h2>
+            <article class="mb-8 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0" data-job-type="Remote">
+                <div class="flex justify-between flex-wrap mb-2 items-baseline">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 text-xl"><span class="job-title">Software Engineer</span></h3>
+                    <span class="font-normal text-secondary text-base">2025 October - Present</span>
+                </div>
+                <div class="flex justify-between flex-wrap mb-4 italic text-text-light dark:text-gray-400">
+                    <span><i class="fa-solid fa-building mr-1"></i><a href="https://top.ir/">Top</a></span>
+                    <span class="text-text-lighter dark:text-gray-500 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Shiraz, Iran</span>
+                    <span class="bg-accent/10 text-accent dark:bg-accent/20 px-2 py-0.5 rounded text-xs font-medium" aria-label="Work Type: On-site"><i class="fa-solid fa-building mr-1"></i> On-site</span>
+                </div>
+                
+                <!-- Key Achievements Section -->
+                <div class="mb-4 bg-light-bg dark:bg-[#222] p-4 rounded-lg border-l-4 border-accent">
+                    <h4 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-trophy text-accent mr-2"></i>Key Achievements</h4>
+                    <ul class="list-none pl-0 gap-3">
+                    <!-- <li class="relative pl-6 list-item"> 
+                        <span class="text-accent font-semibold"></span>  <span class="text-accent font-semibold"></span></li>
+                    </ul> -->
+                    
+                </div>
+                
+                <ul class="list-none pl-0 my-4 mb-6">
+                    <!-- <li class="mb-4 relative pl-6 list-item"></li> -->
+                 
+                    
+                </ul>
+                <!-- <p class="mt-4 italic text-text-light dark:text-gray-400 text-sm py-2 border-t border-dashed border-border-color dark:border-dark-border">Keywords:/p> -->
+            </article>
+            <article class="mb-8 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0" data-job-type="Remote">
+                <div class="flex justify-between flex-wrap mb-2 items-baseline">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 text-xl"><span class="job-title">Software Engineer</span></h3>
+                    <span class="font-normal text-secondary text-base">May 2024 - 2025 October</span>
+                </div>
+                <div class="flex justify-between flex-wrap mb-4 italic text-text-light dark:text-gray-400">
+                    <span><i class="fa-solid fa-building mr-1"></i><a href="https://beh-dan.ir/">Behdan</a></span>
+                    <span class="text-text-lighter dark:text-gray-500 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Shiraz, Iran</span>
+                    <span class="bg-accent/10 text-accent dark:bg-accent/20 px-2 py-0.5 rounded text-xs font-medium" aria-label="Work Type: Remote"><i class="fa-solid fa-laptop-house mr-1"></i> Remote</span>
+                </div>
+                
+                <!-- Key Achievements Section -->
+                <div class="mb-4 bg-light-bg dark:bg-[#222] p-4 rounded-lg border-l-4 border-accent">
+                    <h4 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-trophy text-accent mr-2"></i>Key Achievements</h4>
+                    <ul class="list-none pl-0 gap-3">
+                    <li class="relative pl-6 list-item"> 
+                        Enhanced classroom learning by implementing an interactive application on <span class="text-accent font-semibold">30-40 smart whiteboards</span> throughout a <span class="text-accent font-semibold">10-school district</span>.</li>
+                    </ul>
+                    
+                </div>
+                
+                <ul class="list-none pl-0 my-4 mb-6">
+                    <li class="mb-4 relative pl-6 list-item">Architected and engineered a high-performance,
+                    asynchronous backend for a full-stack educational
+                    platform using Python, FastAPI, and SQLAlchemy. Drove
+                    scalability and maintainability by applying Clean
+                    Architecture principles and advanced query optimization
+                    techniques.</li>
+                    <li class="mb-4 relative pl-6 list-item">Designed and managed a complete containerized
+                    infrastructure using Docker, Docker Compose, and
+                    Traefik, ensuring consistent environments from
+                    development to production. Oversaw PostgreSQL
+                    deployment, Alembic migrations, and a MinIO-based
+                    object storage solution.</li>
+                    <li class="mb-4 relative pl-6 list-item">Collaborated with frontend teams to design and
+                    implement robust APIs, ensuring seamless data flow
+                    and an optimal end-to-end user experience</li>
+                    <li class="mb-4 relative pl-6 list-item">Leveraged Git for version control and to streamline collaborative development workflows within the project.</li>
+                    
+                </ul>
+                <p class="mt-4 italic text-text-light dark:text-gray-400 text-sm py-2 border-t border-dashed border-border-color dark:border-dark-border">Keywords: Python, FastAPI, Docker, Clean Architecture,PostgreSQL</p>
+            </article>
+            
+            <article class="mb-8 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0" data-job-type="onsite">
+                <div class="flex justify-between flex-wrap mb-2 items-baseline">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 text-xl"><span class="job-title">Instructor</span></h3>
+                    <span class="font-normal text-secondary text-base">Nov 2024 - Feb 2025</span>
+                </div>
+                <div class="flex justify-between flex-wrap mb-4 italic text-text-light dark:text-gray-400">
+                    <span><i class="fa-solid fa-building mr-1"></i> Leco</span>
+                    <span class="text-text-lighter dark:text-gray-500 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Jam/Busheher, Iran</span>
+                    <span class="bg-accent/10 text-accent dark:bg-accent/20 px-2 py-0.5 rounded text-xs font-medium" aria-label="Work Type: On-site"><i class="fa-solid fa-building mr-1"></i> On-site</span>
+                </div>
+                
+            
+                
+                <ul class="list-none pl-0 my-4 mb-6">
+                    <li class="mb-4 relative pl-6 list-item">Designed and delivered training programs on FastAPI and Raspberry Pi, emphasizing RESTful APIs, IoT applications, and hardware-software integration.</li>
+                    <li class="mb-4 relative pl-6 list-item">Taught Python programming and database integration to students, enhancing their technical proficiency.</li>
+                    <li class="mb-4 relative pl-6 list-item">Developed hands-on IoT projects, including dashboards, to reinforce practical learning and real-world application.</li>
+                    <li class="mb-4 relative pl-6 list-item">Mentored students in debugging and problem-solving, improving their coding skills and confidence.</li>
+                    <li class="mb-4 relative pl-6 list-item">Created course materials and led live coding sessions to foster critical thinking and hands-on problem-solving abilities.</li>
+                </ul>
+                <p class="mt-4 italic text-text-light dark:text-gray-400 text-sm py-2 border-t border-dashed border-border-color dark:border-dark-border">Keywords: Python, FastAPI, Raspberry Pi, IoT, Teaching, Mentoring, Onsite Work</p>
+            </article>
+        </section>
+
+        <section class="my-8 pb-4" id="education">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-graduation-cap mr-2 text-secondary"></i> Education
+            </h2>
+            <div class="mb-6">
+                <h3 class="font-semibold text-lg text-primary dark:text-gray-200 mb-1">Computer Software Engineering</h3>
+                <div class="flex justify-between flex-wrap mb-4 italic text-text-light dark:text-gray-400">
+                    <span><i class="fa-solid fa-university mr-1"></i> Persian Gulf University</span>
+                    <span class="text-text-lighter dark:text-gray-500 text-sm"><i class="fa-solid fa-location-dot mr-1"></i> Bushehr, Iran</span>
+                    <span class="text-secondary text-base"><i class="fa-solid fa-calendar-alt mr-1"></i>2021 - 2025</span>
+                    <span class="text-secondary text-base"><i class="fa-solid fa-graduation-cap mr-1"></i> GPA: 3.4/4</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-8 pb-4" id="skills">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-code mr-2 text-secondary"></i> Skills
+            </h2>
+            <div class="flex flex-wrap gap-2 mt-4" role="list" aria-label="Technical skills">
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-brands fa-python mr-1"></i> Python</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-brands fa-golang mr-1"></i> Golang</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-brands fa-linux mr-1"></i> Linux</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-globe mr-1"></i> Web Development</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-brands fa-docker mr-1"></i> Docker</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-brands fa-git-alt mr-1"></i> Git</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-bolt mr-1"></i> FastAPI</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-layer-group mr-1"></i> Clean Architecture</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-database mr-1"></i> Relational Databases</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-microchip mr-1"></i> IoT</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-table mr-1"></i> SQLAlchemy</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-network-wired mr-1"></i> Traefik</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-box-archive mr-1"></i> MinIO</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-microchip mr-1"></i> Raspberry Pi</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-vial mr-1"></i> Unit Testing</span>
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-diagram-project mr-1"></i> Integration Testing</span>
+
+            </div>
+        </section>
+
+        <section class="my-8 pb-4" id="projects">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-diagram-project mr-2 text-secondary"></i> Projects
+            </h2>
+            <article class="mb-6 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0">
+                <div class="flex justify-between flex-wrap mb-2 items-baseline">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 text-xl">DFA Minimization Tool</h3>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-brands fa-java mr-1"></i> Java</span>
+                    <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-solid fa-gears mr-1"></i> Algorithms</span>
+                    <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-solid fa-diagram-project mr-1"></i> Automata Theory</span>
+                </div>
+                <p class="text-text-light dark:text-gray-400 mb-3">Designed and implemented a Deterministic Finite Automaton (DFA) minimization tool in Java, applying advanced automata theory and algorithmic techniques to optimize state machines for academic and practical use.</p>
+                <ul class="list-none pl-0 my-2">
+                    <li class="mb-2 relative pl-6 list-item">Developed efficient algorithms for state reduction, equivalence partitioning, and transition optimization, ensuring correctness and performance.</li>
+                    <li class="mb-2 relative pl-6 list-item">Engineered a modular, testable codebase with clear documentation, facilitating academic use and further extension.</li>
+                    <li class="mb-2 relative pl-6 list-item">Demonstrated expertise in Java, object-oriented design, and formal language processing.</li>
+                </ul>
+                <a href="https://github.com/3ina/dfa_minimization" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline text-sm mt-2 inline-block" aria-label="View project on GitHub"><i class="fa-brands fa-github mr-1"></i>View on GitHub</a>
+                <p class="mt-4 italic text-text-light dark:text-gray-400 text-sm py-2 border-t border-dashed border-border-color dark:border-dark-border">Keywords: Java, DFA Minimization, Automata Theory, Algorithm Design, Software Engineering, Formal Languages</p>
+            </article>
+            
+           
+            
+            <article class="mb-6 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0">
+                <article class="mb-6 pb-6 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0">
+                    <div class="flex justify-between flex-wrap mb-2 items-baseline">
+                        <h3 class="font-semibold text-primary dark:text-gray-200 text-xl">NFA to DFA Converter</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-brands fa-golang mr-1"></i> Golang</span>
+                        <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-solid fa-gears mr-1"></i> Algorithms</span>
+                        <span class="bg-secondary/10 text-secondary dark:bg-secondary/20 px-2 py-0.5 rounded text-xs font-medium"><i class="fa-solid fa-diagram-project mr-1"></i> Automata Theory</span>
+                    </div>
+                    <p class="text-text-light dark:text-gray-400 mb-3">Engineered a Go-based tool to convert Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA), applying advanced automata theory and algorithmic techniques to real-world software challenges.</p>
+                    <ul class="list-none pl-0 my-2">
+                        <li class="mb-2 relative pl-6 list-item">Designed robust data structures and efficient algorithms for state management, epsilon closure, and transition mapping.</li>
+                        <li class="mb-2 relative pl-6 list-item">Implemented modular, well-documented code with a focus on correctness, performance, and maintainability.</li>
+                        <li class="mb-2 relative pl-6 list-item">Demonstrated expertise in formal language processing, compiler design, and practical application of theoretical concepts.</li>
+                    </ul>
+                    <a href="https://github.com/3ina/nfa-to-dfa-convertor" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline text-sm mt-2 inline-block" aria-label="View project on GitHub"><i class="fa-brands fa-github mr-1"></i>View on GitHub</a>
+                </article>
+                
+    
+        </section>
+
+        <section class="my-8 pb-4" id="volunteering">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-hands-helping mr-2 text-secondary"></i> Volunteering
+            </h2>
+            <article class="mb-6 pb-4 border-b border-dashed border-border-color dark:border-dark-border last:border-b-0 last:pb-0">
+                <div class="flex justify-between flex-wrap mb-1 items-baseline">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 text-lg"><span class="job-title">Teacher Assistant</span></h3>
+                    <span class="font-normal text-secondary text-sm">Sep 2024 - Jul 2025</span>
+                </div>
+                <div class="italic text-text-light dark:text-gray-400 mb-2">
+                    <span><i class="fa-solid fa-building mr-1"></i>Persian Gulf University</span>
+                    <span class="text-text-lighter dark:text-gray-500 text-xs ml-2"><i class="fa-solid fa-location-dot mr-1"></i>Bushehr, Iran</span>
+                </div>
+                <ul class="list-none pl-0 my-2">
+                    <li class="mb-2 relative pl-6 list-item">Designed and implemented an engaging problem-solving class to enhance students’ critical thinking and coding skills, focusing on practical applications of data structures.</li>
+                    <li class="mb-2 relative pl-6 list-item">Assisted in delivering a comprehensive data structures course, supporting students in understanding  concepts such as arrays, linked lists, trees, and algorithms.</li>
+                    <li class="mb-2 relative pl-6 list-item">Supported  students in mastering PHP web programming concepts, including server-side scripting, database integration, and dynamic web application development.</li>
+                    <li class="mb-2 relative pl-6 list-item">led interactive problem-solving sessions to strengthen students’ skills in designing and implementing PHP-based web solutions.</li>
+                </ul>
+                <p class="mt-2 italic text-text-light dark:text-gray-400 text-xs py-1 border-t border-dashed border-border-color dark:border-dark-border">Keywords: Teaching Assistant, Data Structures, Compiler Design, Web Programming, Academic Support, Persian Gulf University</p>
+            </article>
+            <!-- Add more volunteering experiences here if needed -->
+        </section>
+
+        <!-- <section class="my-8 pb-4" id="certifications">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-certificate mr-2 text-secondary"></i> Certifications
+            </h2>
+            <div class="space-y-4">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                    <div>
+                        <h3 class="font-semibold text-primary dark:text-gray-200">Python Professional Certification</h3>
+                        <p class="text-text-light dark:text-gray-400">Python Institute</p>
+                    </div>
+                    <span class="text-secondary text-sm md:text-base">2022</span>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                    <div>
+                        <h3 class="font-semibold text-primary dark:text-gray-200">Docker Essentials</h3>
+                        <p class="text-text-light dark:text-gray-400">Linux Foundation</p>
+                    </div>
+                    <span class="text-secondary text-sm md:text-base">2022</span>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="my-8 pb-4" id="soft-skills">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-people-group mr-2 text-secondary"></i> Soft Skills
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-light-bg dark:bg-[#2a2a2a] p-4 rounded-lg border border-border-color dark:border-dark-border">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-comments text-secondary mr-2"></i>Communication</h3>
+                    <p class="text-text-light dark:text-gray-400">Effective at explaining complex technical concepts to both technical and non-technical stakeholders. Experienced in documentation and knowledge sharing.</p>
+                </div>
+                
+                <div class="bg-light-bg dark:bg-[#2a2a2a] p-4 rounded-lg border border-border-color dark:border-dark-border">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-users-gear text-secondary mr-2"></i>Teamwork</h3>
+                    <p class="text-text-light dark:text-gray-400">Collaborative team player with experience working in cross-functional teams. Comfortable giving and receiving constructive feedback.</p>
+                </div>
+                
+                <div class="bg-light-bg dark:bg-[#2a2a2a] p-4 rounded-lg border border-border-color dark:border-dark-border">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-lightbulb text-secondary mr-2"></i>Problem Solving</h3>
+                    <p class="text-text-light dark:text-gray-400">Strong analytical skills with a methodical approach to troubleshooting and debugging. Able to break down complex problems into manageable components.</p>
+                </div>
+                
+                <div class="bg-light-bg dark:bg-[#2a2a2a] p-4 rounded-lg border border-border-color dark:border-dark-border">
+                    <h3 class="font-semibold text-primary dark:text-gray-200 mb-2"><i class="fa-solid fa-book-open-reader text-secondary mr-2"></i>Continuous Learning</h3>
+                    <p class="text-text-light dark:text-gray-400">Self-motivated learner with a passion for staying updated with the latest technologies and best practices in software development.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="my-8 pb-4" id="languages">
+            <h2 class="text-2xl text-primary dark:text-gray-200 border-b border-border-color dark:border-dark-border pb-2 mb-6 relative font-semibold section-heading">
+                <i class="fa-solid fa-language mr-2 text-secondary"></i> Languages
+            </h2>
+            <div class="flex flex-wrap gap-2 mt-4" role="list" aria-label="Language proficiency">
+                <span class="bg-light-bg dark:bg-[#2a2a2a] border border-border-color dark:border-dark-border rounded-full px-4 py-1.5 text-sm transition-all duration-300 cursor-default hover:bg-secondary hover:text-white hover:-translate-y-0.5 hover:shadow-custom-sm" role="listitem"><i class="fa-solid fa-flag mr-1"></i> English: Intermediate (B1)</span>
+            </div>
+        </section> -->
+    </main>
+
+    <button class="fixed bottom-5 right-5 bg-secondary text-white border-none rounded-full w-[50px] h-[50px] text-2xl cursor-pointer shadow-custom-md transition-all duration-300 flex items-center justify-center z-nav hover:bg-primary hover:-translate-y-0.5 hover:shadow-custom-lg print:hidden" onclick="window.print()" title="Print Resume" aria-label="Print Resume">
+        <i class="fa-solid fa-print"></i>
+    </button>
+
+
+        
+</body>
+</html>
