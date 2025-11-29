@@ -41,41 +41,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'dark-bg': '#0a0e27',
-                        'dark-card': 'rgba(15, 23, 42, 0.7)',
-                        'neon-blue': '#00d4ff',
-                        'neon-purple': '#9333ea',
-                        'dark-border': 'rgba(139, 92, 246, 0.2)',
-                        'text-primary': '#e2e8f0',
-                        'text-secondary': '#94a3b8',
+                        'primary': '#4361ee',
+                        'secondary': '#3f37c9',
+                        'accent': '#7209b7',
+                        'light': '#f8f9fa',
+                        'dark': '#212529',
                     },
                     fontFamily: {
                         'mono': ['Space Mono', 'monospace'],
                         'code': ['Roboto Mono', 'monospace'],
                     },
-                    boxShadow: {
-                        'glow-blue': '0 0 15px rgba(0, 212, 255, 0.5)',
-                        'glow-purple': '0 0 15px rgba(147, 51, 234, 0.5)',
-                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-                        'card': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'float': 'float 3s ease-in-out infinite'
                     },
                     keyframes: {
-                        blink: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0' }
-                        },
-                        glow: {
-                            '0%, 100%': { boxShadow: '0 0 5px rgba(0, 212, 255, 0.5)' },
-                            '50%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.8)' }
-                        },
-                        typing: {
-                            'from': { width: '0' },
-                            'to': { width: '100%' }
-                        },
                         fadeIn: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
@@ -84,303 +67,214 @@
                             '0%, 100%': { transform: 'translateY(0px)' },
                             '50%': { transform: 'translateY(-10px)' }
                         }
-                    },
-                    animation: {
-                        'blink': 'blink 1s infinite',
-                        'glow': 'glow 2s infinite alternate',
-                        'typing': 'typing 3s steps(30, end)',
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'float': 'float 3s ease-in-out infinite'
-                    },
-                    backdropBlur: {
-                        'glass': '8px',
                     }
                 },
             },
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .glass {
-                background: rgba(15, 23, 42, 0.25);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-            
-            .glass-dark {
-                background: rgba(10, 14, 39, 0.7);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.2);
-            }
-            
-            .neon-text {
-                text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
-            }
-            
-            .neon-border {
-                box-shadow: 0 0 5px rgba(0, 212, 255, 0.5), inset 0 0 5px rgba(0, 212, 255, 0.1);
-            }
-            
-            .neon-button {
-                background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(147, 51, 234, 0.2));
-                border: 1px solid rgba(0, 212, 255, 0.5);
-                box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-                transition: all 0.3s ease;
-            }
-            
-            .neon-button:hover {
-                background: linear-gradient(45deg, rgba(0, 212, 255, 0.4), rgba(147, 51, 234, 0.4));
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-                transform: translateY(-2px);
-            }
-            
-            .terminal {
-                background: rgba(10, 14, 39, 0.9);
-                border: 1px solid rgba(0, 212, 255, 0.3);
-                border-radius: 8px;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            }
-            
-            .terminal-header {
-                background: rgba(0, 0, 0, 0.3);
-                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-            }
-            
-            .terminal-dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-            }
-            
-            .typing-effect {
-                overflow: hidden;
-                white-space: nowrap;
-                border-right: 2px solid rgba(0, 212, 255, 0.8);
-                animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-            }
-            
-            .skill-bar {
-                height: 6px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 3px;
-                overflow: hidden;
-            }
-            
-            .skill-progress {
-                height: 100%;
-                background: linear-gradient(90deg, #00d4ff, #9333ea);
-                border-radius: 3px;
-            }
-            
-            .github-card {
-                background: rgba(10, 14, 39, 0.7);
-                border: 1px solid rgba(139, 92, 246, 0.2);
-                border-radius: 8px;
-                transition: all 0.3s ease;
-            }
-            
-            .github-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                border-color: rgba(0, 212, 255, 0.5);
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .code-font {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+        
+        /* Timeline styles */
+        .timeline-container {
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #4361ee;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px #e9ecef;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Mobile timeline adjustments */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
             }
             
             .timeline-dot {
-                width: 16px;
-                height: 16px;
-                background: #00d4ff;
-                border-radius: 50%;
-                box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+                left: 20px;
             }
             
-            .timeline-line {
-                width: 2px;
-                background: linear-gradient(to bottom, #00d4ff, #9333ea);
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 60px;
             }
             
-            @keyframes pulse {
-                0% {
-                    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
-                }
-                70% {
-                    box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
-                }
-                100% {
-                    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
-                }
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+            }
+        }
+        
+        /* Desktop timeline adjustments */
+        @media (min-width: 769px) {
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-right: auto;
+                margin-left: 0;
+                padding-right: 40px;
             }
             
-            .pulse {
-                animation: pulse 2s infinite;
-            }
-            
-            /* Scrollbar styling */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            
-            ::-webkit-scrollbar-track {
-                background: rgba(10, 14, 39, 0.5);
-            }
-            
-            ::-webkit-scrollbar-thumb {
-                background: linear-gradient(to bottom, #00d4ff, #9333ea);
-                border-radius: 4px;
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: auto;
+                margin-right: 0;
+                padding-left: 40px;
             }
         }
     </style>
 </head>
-<body class="bg-dark-bg text-text-primary font-mono text-base leading-relaxed m-0 p-0 scroll-smooth" x-data="{ darkMode: true, mobileMenuOpen: false }" :class="{ 'dark': darkMode }">
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    
-    <!-- Sticky Navigation -->
-    <nav class="fixed top-0 left-0 w-full glass-dark z-50 transition-all duration-300" aria-label="Main navigation">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#hero" class="text-neon-blue font-bold text-xl flex items-center" aria-label="Sina Roydel">
-                    <i class="fa-solid fa-code mr-2"></i> Sina Roydel
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="text-primary font-bold text-xl flex items-center">
+                    <i class="fas fa-code mr-2"></i> Sina Roydel
                 </a>
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#hero" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to hero section">Home</a>
-                    <a href="#about" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to about section">About</a>
-                    <a href="#experience" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to experience section">Experience</a>
-                    <a href="#volunteering" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to volunteering section">Volunteering</a>
-                    <a href="#tech-stack" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to tech stack section">Skills</a>
-                    <a href="#soft-skills" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to soft skills section">Soft Skills</a>
-                    <a href="#projects" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to projects section">Projects</a>
-                    <a href="#contact" class="text-text-secondary hover:text-neon-blue transition-colors" aria-label="Go to contact section">Contact</a>
+                    <a href="#hero" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+                    <a href="#volunteering" class="text-gray-700 hover:text-primary transition-colors">Volunteering</a>
+                    <a href="#tech-stack" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+                    <a href="#soft-skills" class="text-gray-700 hover:text-primary transition-colors">Soft Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                 </div>
-                <button class="md:hidden text-text-secondary" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle mobile menu">
-                    <i class="fa-solid fa-bars text-xl"></i>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
-            <div x-show="mobileMenuOpen" class="md:hidden mt-4 pb-4" x-transition>
-                <a href="#hero" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Home</a>
-                <a href="#about" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">About</a>
-                <a href="#experience" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Experience</a>
-                <a href="#volunteering" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Volunteering</a>
-                <a href="#tech-stack" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Skills</a>
-                <a href="#soft-skills" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors"Soft >Skills</a>
-                <a href="#projects" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Projects</a>
-                <a href="#contact" class="block py-2 text-text-secondary hover:text-neon-blue transition-colors">Contact</a>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#hero" class="block py-2 text-gray-700 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-primary transition-colors">Experience</a>
+                <a href="#volunteering" class="block py-2 text-gray-700 hover:text-primary transition-colors">Volunteering</a>
+                <a href="#tech-stack" class="block py-2 text-gray-700 hover:text-primary transition-colors">Skills</a>
+                <a href="#soft-skills" class="block py-2 text-gray-700 hover:text-primary transition-colors">Soft Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Terminal -->
-    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-4">
-        <div class="max-w-4xl w-full">
-            <div class="terminal p-6 animate-fade-in">
-                <div class="terminal-header flex items-center mb-4 px-2 py-2">
-                    <div class="terminal-dot bg-red-500 mr-2"></div>
-                    <div class="terminal-dot bg-yellow-500 mr-2"></div>
-                    <div class="terminal-dot bg-green-500"></div>
-                    <div class="ml-auto text-text-secondary text-sm">bash</div>
-                </div>
-                <div class="font-code">
-                    <div class="mb-2">
-                        <span class="text-green-400">$</span> 
-                        <span class="text-text-secondary ml-2">whoami</span>
-                    </div>
-                    <div class="mb-4 ml-4 text-neon-blue">Sina Roydel</div>
-                    
-                    <div class="mb-2">
-                        <span class="text-green-400">$</span> 
-                        <span class="text-text-secondary ml-2">cat about.txt</span>
-                    </div>
-                    <div class="mb-4 ml-4 text-text-primary">
-                        <p class="typing-effect">Software Engineer passionate about building scalable, reliable, and well-architected backend systems.</p>
-                    </div>
-                    
-                    <div class="mb-2">
-                        <span class="text-green-400">$</span> 
-                        <span class="text-text-secondary ml-2">ls skills/</span>
-                    </div>
-                    <div class="mb-4 ml-4 grid grid-cols-2 md:grid-cols-4 gap-2">
-                        <span class="text-neon-purple">Python</span>
-                        <span class="text-neon-purple">FastAPI</span>
-                        <span class="text-neon-purple">Docker</span>
-                        <span class="text-neon-purple">Clean Architecture</span>
-                        <span class="text-neon-purple">SQLAlchemy</span>
-                        <span class="text-neon-purple">Git</span>
-                        <span class="text-neon-purple">Linux</span>
-                        <span class="text-neon-purple">IoT</span>
-                        <span class="text-neon-purple">MinIO</span>
-                        <span class="text-neon-purple">Golang</span>
-                        <span class="text-neon-purple">Relational Databases</span>
-                        <span class="text-neon-purple">Unit Testing</span>
-                        <span class="text-neon-purple">Integration Testing</span>
-                    </div>
-                    
-                    <div class="mb-2">
-                        <span class="text-green-400">$</span> 
-                        <span class="text-text-secondary ml-2">echo "Contact:"</span>
-                    </div>
-                    <div class="mb-4 ml-4 text-text-primary">
-                        <p>📧 3inaroydl@gmail.com</p>
-                        <p>📱 +989178719056</p>
-                        <p>📍 Shiraz, Iran</p>
-                    </div>
-                    
-                    <div class="flex items-center">
-                        <span class="text-green-400">$</span> 
-                        <span class="text-text-secondary ml-2">_</span>
-                        <span class="animate-blink ml-1">█</span>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-4 bg-gradient-to-br from-white to-gray-50">
+        <div class="max-w-4xl w-full text-center">
+            <div class="mb-8 animate-fade-in">
+                <!-- <img src="https://i.ibb.co/Rk02Y3zG/photo-5897882566298552284-y.jpg" alt="Profile picture of Sina Roydel" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-lg"> -->
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Sina Roydel</h1>
+                <h2 class="text-2xl md:text-3xl text-primary mb-6">Software Engineer</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Passionate about building scalable, reliable, and well-architected backend systems with expertise in Python, FastAPI, and Docker.
+                </p>
             </div>
             
-            <div class="flex justify-center mt-8 space-x-4">
-                <a href="#experience" class="neon-button px-6 py-3 rounded-lg text-neon-blue font-medium">View Resume</a>
-                <a href="#projects" class="neon-button px-6 py-3 rounded-lg text-neon-purple font-medium">View Projects</a>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="#experience" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors">
+                    <i class="fas fa-briefcase mr-2"></i> View Resume
+                </a>
+                <a href="#contact" class="bg-white text-primary border-2 border-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i> Get In Touch
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-4">
+                <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4">
+    <section id="about" class="py-20 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">About Me</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="glass-dark p-6 rounded-lg neon-border">
-                    <img src="https://i.ibb.co/Rk02Y3zG/photo-5897882566298552284-y.jpg" alt="Profile picture of Sina Roydel" class="w-full rounded-lg mb-4">
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="text-neon-blue hover:text-neon-purple transition-colors" aria-label="GitHub profile">
-                            <i class="fa-brands fa-github text-2xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="text-neon-blue hover:text-neon-purple transition-colors" aria-label="LinkedIn profile">
-                            <i class="fa-brands fa-linkedin text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <p class="text-lg text-text-primary mb-6">
+                    <p class="text-lg text-gray-700 mb-6">
                         I'm a Software Engineer passionate about building scalable, reliable, and well-architected backend systems. With strong expertise in Python, FastAPI, and Docker, I focus on crafting clean, maintainable code aligned with Clean Architecture principles.
                     </p>
-                    <p class="text-lg text-text-primary mb-6">
+                    <p class="text-lg text-gray-700 mb-6">
+                        I enjoy solving complex problems and creating efficient solutions that make a positive impact. I'm always eager to learn new technologies and improve my skills.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="glass-dark p-4 rounded-lg">
-                            <h3 class="font-semibold text-neon-blue mb-2">Location</h3>
-                            <p class="text-text-secondary">Shiraz, Iran</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Location</h3>
+                            <p class="text-gray-600">Shiraz, Iran</p>
                         </div>
-                        <div class="glass-dark p-4 rounded-lg">
-                            <h3 class="font-semibold text-neon-blue mb-2">Availability</h3>
-                            <p class="text-text-secondary">Remote, Hybrid, On-site</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary mb-2"><i class="fas fa-briefcase mr-2"></i>Availability</h3>
+                            <p class="text-gray-600">Remote, Hybrid, On-site</p>
                         </div>
-                        <div class="glass-dark p-4 rounded-lg">
-                            <h3 class="font-semibold text-neon-blue mb-2">Email</h3>
-                            <p class="text-text-secondary">3inaroydl@gmail.com</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary mb-2"><i class="fas fa-envelope mr-2"></i>Email</h3>
+                            <p class="text-gray-600">3inaroydl@gmail.com</p>
                         </div>
-                        <div class="glass-dark p-4 rounded-lg">
-                            <h3 class="font-semibold text-neon-blue mb-2">Phone</h3>
-                            <p class="text-text-secondary">+989178719056</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-primary mb-2"><i class="fas fa-phone mr-2"></i>Phone</h3>
+                            <p class="text-gray-600">+989178719056</p>
                         </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary rounded-full opacity-10 animate-float"></div>
+                        <img src="https://i.ibb.co/Rk02Y3zG/photo-5897882566298552284-y.jpg" alt="Profile picture of Sina Roydel" class="relative w-full max-w-sm rounded-lg shadow-lg">
                     </div>
                 </div>
             </div>
@@ -388,171 +282,167 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 px-4">
+    <section id="experience" class="py-20 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Work Experience</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Work Experience</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-            <div class="relative">
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line"></div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
                 <div class="space-y-12">
-                    <div class="flex items-center justify-center">
-                        <div class="w-full md:w-5/12 glass-dark p-6 rounded-lg neon-border md:mr-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md card-hover">
                             <div class="flex flex-wrap justify-between items-start mb-2">
-                                <h3 class="text-xl font-semibold text-neon-blue">Software Engineer</h3>
-                                <span class="text-sm text-text-secondary">2025 October - Present</span>
+                                <h3 class="text-xl font-semibold text-primary">Software Engineer</h3>
+                                <span class="text-sm text-gray-500">2025 October - Present</span>
                             </div>
                             <div class="flex items-center mb-4">
-                                <i class="fa-solid fa-building mr-2 text-neon-purple"></i>
-                                <a href="https://top.ir/" class="text-text-secondary hover:text-neon-blue transition-colors">Top</a>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <i class="fa-solid fa-location-dot mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Shiraz, Iran</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <span class="text-neon-purple text-xs">On-site</span>
+                                <i class="fas fa-building mr-2 text-gray-500"></i>
+                                <a href="https://top.ir/" class="text-gray-600 hover:text-primary transition-colors">Top</a>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Shiraz, Iran</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <span class="bg-primary text-white text-xs px-2 py-1 rounded">On-site</span>
                             </div>
                         </div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 timeline-dot pulse"></div>
-                        <div class="hidden md:block w-5/12"></div>
                     </div>
                     
-                    <div class="flex items-center justify-center">
-                        <div class="hidden md:block w-5/12"></div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 timeline-dot pulse"></div>
-                        <div class="w-full md:w-5/12 glass-dark p-6 rounded-lg neon-border md:ml-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md card-hover">
                             <div class="flex flex-wrap justify-between items-start mb-2">
-                                <h3 class="text-xl font-semibold text-neon-blue">Software Engineer</h3>
-                                <span class="text-sm text-text-secondary">May 2024 - 2025 October</span>
+                                <h3 class="text-xl font-semibold text-primary">Software Engineer</h3>
+                                <span class="text-sm text-gray-500">May 2024 - 2025 October</span>
                             </div>
                             <div class="flex items-center mb-4">
-                                <i class="fa-solid fa-building mr-2 text-neon-purple"></i>
-                                <a href="https://beh-dan.ir/" class="text-text-secondary hover:text-neon-blue transition-colors">Behdan</a>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <i class="fa-solid fa-location-dot mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Shiraz, Iran</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <span class="text-neon-purple text-xs">Remote</span>
+                                <i class="fas fa-building mr-2 text-gray-500"></i>
+                                <a href="https://beh-dan.ir/" class="text-gray-600 hover:text-primary transition-colors">Behdan</a>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Shiraz, Iran</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <span class="bg-primary text-white text-xs px-2 py-1 rounded">Remote</span>
                             </div>
-                            <div class="mb-4 glass-dark p-4 rounded-lg border-l-4 border-neon-purple">
-                                <h4 class="font-semibold text-neon-blue mb-2"><i class="fa-solid fa-trophy text-neon-purple mr-2"></i>Key Achievement</h4>
-                                <p class="text-text-secondary">Enhanced classroom learning by implementing an interactive application on <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">30-40 smart whiteboards</span> throughout a <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">10-school district</span>.</p>
+                            <div class="mb-4 bg-gray-50 p-4 rounded-lg border-l-4 border-primary">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-trophy mr-2"></i>Key Achievement</h4>
+                                <p class="text-gray-600">Enhanced classroom learning by implementing an interactive application on <span class="font-bold">30-40 smart whiteboards</span> throughout a <span class="font-bold">10-school district</span>.</p>
                             </div>
                             <ul class="list-none pl-0 my-4">
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                        Architected and engineered a high-performance, asynchronous backend for a full-stack educational platform using 
-                                        <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">FastAPI</span>, and
-                                        <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">SQLAlchemy</span>. Drove
-                                        <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">scalability</span> and
-                                         <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">maintainability</span> by 
-                                         applying  <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">Clean Architecture principles</span>
-                                          and advanced query optimization techniques.</li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                        Designed and managed a complete containerized infrastructure using <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">Docker, Docker Compose, and Traefik,</span> 
-                                         ensuring consistent environments from development to production. 
-                                         Oversaw PostgreSQL deployment, Alembic migrations, and a 
-                                          <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">MinIO-based</span> object storage solution.</li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                        Collaborated with frontend teams to design and implement robust APIs, ensuring seamless data flow and an optimal end-to-end user experience
+                                <li class="mb-4 relative pl-8 text-gray-600">
+                                    <span class="absolute left-0 top-1 text-primary">▹</span>
+                                    <span class="font-semibold">Developed</span> a high-performance, asynchronous backend system for educational platform using <span class="font-bold text-primary">FastAPI</span> and <span class="font-bold text-primary">SQLAlchemy</span>
+                                    <br>
+                                    Implemented <span class="font-bold text-primary">Clean Architecture</span> principles to enhance <span class="font-bold">scalability</span> and <span class="font-bold">maintainability</span> through advanced query optimization
+                                </li>
+                                <li class="mb-4 relative pl-8 text-gray-600">
+                                    <span class="absolute left-0 top-1 text-primary">▹</span>
+                                    <span class="font-semibold">Built</span> and managed containerized infrastructure with <span class="font-bold text-primary">Docker, Docker Compose, and Traefik</span> for consistent development-to-production workflow
+                                    <br>
+                                    Administered <span class="font-bold">PostgreSQL</span> database, <span class="font-bold">Alembic migrations</span>, and <span class="font-bold text-primary">MinIO</span> object storage solution
+                                </li>
+                                <li class="mb-2 relative pl-8 text-gray-600">
+                                    <span class="absolute left-0 top-1 text-primary">▹</span>
+                                    <span class="font-semibold">Partnered</span> with frontend development teams to design and implement <span class="font-bold">RESTful APIs</span>
+                                    <br>
+                                    Ensured <span class="font-bold">seamless data integration</span> and optimized <span class="font-bold">end-to-end user experience</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div class="flex items-center justify-center">
-                        <div class="w-full md:w-5/12 glass-dark p-6 rounded-lg neon-border md:mr-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md card-hover">
                             <div class="flex flex-wrap justify-between items-start mb-2">
-                                <h3 class="text-xl font-semibold text-neon-blue">Instructor</h3>
-                                <span class="text-sm text-text-secondary">Nov 2024 - Feb 2025</span>
+                                <h3 class="text-xl font-semibold text-primary">Instructor</h3>
+                                <span class="text-sm text-gray-500">Nov 2024 - Feb 2025</span>
                             </div>
                             <div class="flex items-center mb-4">
-                                <i class="fa-solid fa-building mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Leco</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <i class="fa-solid fa-location-dot mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Jam/Busheher, Iran</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <span class="text-neon-purple text-xs">On-site</span>
+                                <i class="fas fa-building mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Leco</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Jam/Busheher, Iran</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <span class="bg-primary text-white text-xs px-2 py-1 rounded">On-site</span>
                             </div>
                             <ul class="list-none pl-0 my-4">
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Designed and delivered <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">training programs</span> on <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">FastAPI</span> and <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">Raspberry Pi</span>, emphasizing <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">RESTful APIs</span>, <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">IoT applications</span>, and <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">hardware-software integration</span>.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Designed and delivered <span class="font-bold">training programs</span> on <span class="font-bold">FastAPI</span> and <span class="font-bold">Raspberry Pi</span>, emphasizing <span class="font-bold">RESTful APIs</span>, <span class="font-bold">IoT applications</span>, and <span class="font-bold">hardware-software integration</span>.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Taught <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">Python programming</span> and <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">database integration</span> to students, enhancing their <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">technical proficiency</span>.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Taught <span class="font-bold">Python programming</span> and <span class="font-bold">database integration</span> to students, enhancing their <span class="font-bold">technical proficiency</span>.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Developed hands-on <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">IoT projects</span>, including <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">dashboards</span>, to reinforce <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">practical learning</span> and <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">real-world application</span>.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Developed hands-on <span class="font-bold">IoT projects</span>, including <span class="font-bold">dashboards</span>, to reinforce <span class="font-bold">practical learning</span> and <span class="font-bold">real-world application</span>.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Mentored students in <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">debugging</span> and <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">problem-solving</span>, improving their <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">coding skills</span> and confidence.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Mentored students in <span class="font-bold">debugging</span> and <span class="font-bold">problem-solving</span>, improving their <span class="font-bold">coding skills</span> and confidence.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Created <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">course materials</span> and led <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">live coding sessions</span> to foster <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">critical thinking</span> and hands-on <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">problem-solving abilities</span>.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Created <span class="font-bold">course materials</span> and led <span class="font-bold">live coding sessions</span> to foster <span class="font-bold">critical thinking</span> and hands-on <span class="font-bold">problem-solving abilities</span>.
                                 </li>
                             </ul>
                         </div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 timeline-dot pulse"></div>
-                        <div class="hidden md:block w-5/12"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Volunteering Section -->
-    <section id="volunteering" class="py-20 px-4">
+    <section id="volunteering" class="py-20 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Volunteering Experience</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Volunteering Experience</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-            <div class="relative">
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line"></div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
                 <div class="space-y-12">
-                    <div class="flex items-center justify-center">
-                        <div class="hidden md:block w-5/12"></div>
-                        <div class="absolute left-1/2 transform -translate-x-1/2 timeline-dot pulse"></div>
-                        <div class="w-full md:w-5/12 glass-dark p-6 rounded-lg neon-border md:ml-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md card-hover">
                             <div class="flex flex-wrap justify-between items-start mb-2">
-                                <h3 class="text-xl font-semibold text-neon-blue">Teacher Assistant</h3>
-                                <span class="text-sm text-text-secondary">Sep 2024 - Jul 2025</span>
+                                <h3 class="text-xl font-semibold text-primary">Teacher Assistant</h3>
+                                <span class="text-sm text-gray-500">Sep 2024 - Jul 2025</span>
                             </div>
                             <div class="flex items-center mb-4">
-                                <i class="fa-solid fa-graduation-cap mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Persian Gulf University</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <i class="fa-solid fa-location-dot mr-2 text-neon-purple"></i>
-                                <span class="text-text-secondary">Bushehr, Iran</span>
-                                <span class="mx-2 text-text-secondary">|</span>
-                                <span class="text-neon-purple text-xs">Volunteer</span>
+                                <i class="fas fa-graduation-cap mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Persian Gulf University</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+                                <span class="text-gray-600">Bushehr, Iran</span>
+                                <span class="mx-2 text-gray-500">|</span>
+                                <span class="bg-primary text-white text-xs px-2 py-1 rounded">Volunteer</span>
                             </div>
-                            <div class="mb-4 glass-dark p-4 rounded-lg border-l-4 border-neon-purple">
-                                <h4 class="font-semibold text-neon-blue mb-2"><i class="fa-solid fa-hands-helping text-neon-purple mr-2"></i>Volunteer Impact</h4>
-                                <p class="text-text-secondary">Enhanced educational experience for computer science students through dedicated teaching assistance and specialized problem-solving sessions.</p>
+                            <div class="mb-4 bg-gray-50 p-4 rounded-lg border-l-4 border-primary">
+                                <h4 class="font-semibold text-primary mb-2"><i class="fas fa-hands-helping mr-2"></i>Volunteer Impact</h4>
+                                <p class="text-gray-600">Enhanced educational experience for computer science students through dedicated teaching assistance and specialized problem-solving sessions.</p>
                             </div>
                             <ul class="list-none pl-0 my-4">
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
                                     Designed and implemented an engaging problem-solving class to enhance students' critical thinking and coding skills, focusing on practical applications of data structures.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Assisted in delivering a comprehensive data structures course, supporting students in understanding concepts such as  <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">arrays, linked lists, trees, and algorithms</span>.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Assisted in delivering a comprehensive data structures course, supporting students in understanding concepts such as <span class="font-bold">arrays, linked lists, trees, and algorithms</span>.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
-                                    Supported students in mastering  <span class="text-accent font-extrabold bg-accent/10 px-1 rounded">PHP web programming</span> concepts, including server-side scripting, database integration, and dynamic web application development.
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
+                                    Supported students in mastering <span class="font-bold">PHP web programming</span> concepts, including server-side scripting, database integration, and dynamic web application development.
                                 </li>
-                                <li class="mb-2 relative pl-6 text-text-secondary">
-                                    <span class="absolute left-0 text-neon-purple">▹</span>
+                                <li class="mb-2 relative pl-6 text-gray-600">
+                                    <span class="absolute left-0 text-primary">▹</span>
                                     Led interactive problem-solving sessions to strengthen students' skills in designing and implementing PHP-based web solutions.
                                 </li>
                             </ul>
@@ -562,132 +452,127 @@
             </div>
         </div>
     </section>
-    <!-- Tech Stack Section – Neon/Glass Theme -->
-    <section id="tech-stack" class="py-20 px-4">
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="py-20 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-
-            <!-- Heading -->
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Skills</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Technical Skills</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-
-            <!-- Neon Chips -->
-            <div class="flex flex-wrap justify-center gap-3 mt-6">
-
-                <!-- Chip -->
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-brands fa-python text-neon-blue"></i> Python
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-bolt text-neon-blue"></i> FastAPI
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-brands fa-docker text-neon-blue"></i> Docker
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-layer-group text-neon-blue"></i> Clean Architecture
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-database text-neon-blue"></i> SQLAlchemy
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-brands fa-git-alt text-neon-blue"></i> Git
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-brands fa-linux text-neon-blue"></i> Linux
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-microchip text-neon-blue"></i> IoT
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-network-wired text-neon-blue"></i> Traefik
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-box-archive text-neon-blue"></i> MinIO
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-brands fa-golang text-neon-blue"></i> Golang
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-table text-neon-blue"></i> Relational Databases
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-vial text-neon-blue"></i> Unit Testing
-                </span>
-
-                <span class="glass-dark neon-border px-4 py-2 rounded-full text-sm flex items-center gap-2 chip-hover">
-                    <i class="fa-solid fa-diagram-project text-neon-blue"></i> Integration Testing
-                </span>
-
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fab fa-python text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Python</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-bolt text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">FastAPI</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fab fa-docker text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Docker</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-layer-group text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Clean Architecture</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-database text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">SQLAlchemy</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fab fa-git-alt text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Git</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fab fa-linux text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Linux</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-microchip text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">IoT</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-network-wired text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Traefik</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-box-archive text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">MinIO</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fab fa-golang text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Golang</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-table text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Relational Databases</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-vial text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Unit Testing</span>
+                </div>
+                <div class="skill-tag bg-white px-4 py-3 rounded-lg shadow-md">
+                    <i class="fas fa-diagram-project text-2xl text-primary mr-2"></i>
+                    <span class="font-medium">Integration Testing</span>
+                </div>
             </div>
-
         </div>
     </section>
+
     <!-- Soft Skills Section -->
-    <section id="soft-skills" class="py-20 px-4">
+    <section id="soft-skills" class="py-20 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Soft Skills</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Soft Skills</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-dark p-6 rounded-lg neon-border hover:shadow-glow-blue transition-all duration-300">
+                <div class="bg-gray-50 p-6 rounded-lg card-hover">
                     <div class="flex items-center mb-4">
-                        <div class="glass-dark p-3 rounded-full mr-4">
-                            <i class="fa-solid fa-comments text-2xl text-neon-blue"></i>
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-comments text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-neon-blue">Communication</h3>
+                        <h3 class="text-xl font-semibold text-primary">Communication</h3>
                     </div>
-                    <p class="text-text-secondary">
+                    <p class="text-gray-600">
                         Effective at explaining complex technical concepts to both technical and non-technical stakeholders. Experienced in documentation and knowledge sharing.
                     </p>
                 </div>
                 
-                <div class="glass-dark p-6 rounded-lg neon-border hover:shadow-glow-purple transition-all duration-300">
+                <div class="bg-gray-50 p-6 rounded-lg card-hover">
                     <div class="flex items-center mb-4">
-                        <div class="glass-dark p-3 rounded-full mr-4">
-                            <i class="fa-solid fa-people-group text-2xl text-neon-purple"></i>
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-users text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-neon-purple">Teamwork</h3>
+                        <h3 class="text-xl font-semibold text-primary">Teamwork</h3>
                     </div>
-                    <p class="text-text-secondary">
+                    <p class="text-gray-600">
                         Collaborative team player with experience working in cross-functional teams. Comfortable giving and receiving constructive feedback.
                     </p>
                 </div>
                 
-                <div class="glass-dark p-6 rounded-lg neon-border hover:shadow-glow-blue transition-all duration-300">
+                <div class="bg-gray-50 p-6 rounded-lg card-hover">
                     <div class="flex items-center mb-4">
-                        <div class="glass-dark p-3 rounded-full mr-4">
-                            <i class="fa-solid fa-lightbulb text-2xl text-neon-blue"></i>
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-neon-blue">Problem Solving</h3>
+                        <h3 class="text-xl font-semibold text-primary">Problem Solving</h3>
                     </div>
-                    <p class="text-text-secondary">
+                    <p class="text-gray-600">
                         Strong analytical skills with a methodical approach to troubleshooting and debugging. Able to break down complex problems into manageable components.
                     </p>
                 </div>
                 
-                <div class="glass-dark p-6 rounded-lg neon-border hover:shadow-glow-purple transition-all duration-300">
+                <div class="bg-gray-50 p-6 rounded-lg card-hover">
                     <div class="flex items-center mb-4">
-                        <div class="glass-dark p-3 rounded-full mr-4">
-                            <i class="fa-solid fa-graduation-cap text-2xl text-neon-purple"></i>
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-graduation-cap text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-neon-purple">Continuous Learning</h3>
+                        <h3 class="text-xl font-semibold text-primary">Continuous Learning</h3>
                     </div>
-                    <p class="text-text-secondary">
+                    <p class="text-gray-600">
                         Self-motivated learner with a passion for staying updated with the latest technologies and best practices in software development.
                     </p>
                 </div>
@@ -695,136 +580,52 @@
         </div>
     </section>
 
-
-    <!-- Projects Section with GitHub Integration -->
-    <!-- <section id="projects" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Featured Projects</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="github-card p-6">
-                    <div class="flex items-center mb-4">
-                        <i class="fa-brands fa-github text-3xl text-neon-blue mr-4"></i>
-                        <div>
-                            <h3 class="text-xl font-semibold text-text-primary">DFA Minimization Tool</h3>
-                            <a href="https://github.com/3ina/dfa_minimization" target="_blank" rel="noopener noreferrer" class="text-neon-blue text-sm">github.com/3ina/dfa_minimization</a>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Java</span>
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Algorithms</span>
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Automata Theory</span>
-                    </div>
-                    <p class="text-text-secondary mb-4">Designed and implemented a Deterministic Finite Automaton (DFA) minimization tool in Java, applying advanced automata theory and algorithmic techniques.</p>
-                    <ul class="list-none pl-0 mb-4">
-                        <li class="mb-2 relative pl-6 text-text-secondary">
-                            <span class="absolute left-0 text-neon-purple">▹</span>
-                            Developed efficient algorithms for state reduction and optimization
-                        </li>
-                        <li class="mb-2 relative pl-6 text-text-secondary">
-                            <span class="absolute left-0 text-neon-purple">▹</span>
-                            Engineered a modular, testable codebase with clear documentation
-                        </li>
-                    </ul>
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center text-text-secondary text-sm">
-                            <i class="fa-solid fa-star mr-1"></i> 12
-                            <i class="fa-solid fa-code-branch ml-4 mr-1"></i> 3
-                        </div>
-                        <a href="https://github.com/3ina/dfa_minimization" target="_blank" rel="noopener noreferrer" class="neon-button px-4 py-2 rounded text-sm">View on GitHub</a>
-                    </div>
-                </div>
-                
-                <div class="github-card p-6">
-                    <div class="flex items-center mb-4">
-                        <i class="fa-brands fa-github text-3xl text-neon-blue mr-4"></i>
-                        <div>
-                            <h3 class="text-xl font-semibold text-text-primary">NFA to DFA Converter</h3>
-                            <a href="https://github.com/3ina/nfa-to-dfa-convertor" target="_blank" rel="noopener noreferrer" class="text-neon-blue text-sm">github.com/3ina/nfa-to-dfa-convertor</a>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Golang</span>
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Algorithms</span>
-                        <span class="glass-dark px-2 py-1 rounded text-xs">Automata Theory</span>
-                    </div>
-                    <p class="text-text-secondary mb-4">Engineered a Go-based tool to convert Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA), applying advanced automata theory.</p>
-                    <ul class="list-none pl-0 mb-4">
-                        <li class="mb-2 relative pl-6 text-text-secondary">
-                            <span class="absolute left-0 text-neon-purple">▹</span>
-                            Designed robust data structures for state management
-                        </li>
-                        <li class="mb-2 relative pl-6 text-text-secondary">
-                            <span class="absolute left-0 text-neon-purple">▹</span>
-                            Implemented modular, well-documented code with focus on performance
-                        </li>
-                    </ul>
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center text-text-secondary text-sm">
-                            <i class="fa-solid fa-star mr-1"></i> 8
-                            <i class="fa-solid fa-code-branch ml-4 mr-1"></i> 2
-                        </div>
-                        <a href="https://github.com/3ina/nfa-to-dfa-convertor" target="_blank" rel="noopener noreferrer" class="neon-button px-4 py-2 rounded text-sm">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="neon-button px-6 py-3 rounded-lg text-neon-blue font-medium">
-                    <i class="fa-brands fa-github mr-2"></i> View More on GitHub
-                </a>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4">
+    <section id="contact" class="py-20 px-4 bg-gray-50">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-neon-blue mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-purple mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
             </div>
-            <div class="glass-dark p-8 rounded-lg neon-border">
+            <div class="bg-white p-8 rounded-lg shadow-md">
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <div class="flex items-center">
-                        <i class="fa-solid fa-envelope text-2xl text-neon-blue mr-4"></i>
+                        <i class="fas fa-envelope text-2xl text-primary mr-4"></i>
                         <div>
-                            <h3 class="font-semibold text-text-primary">Email</h3>
-                            <a href="mailto:3inaroydl@gmail.com" class="text-text-secondary hover:text-neon-blue transition-colors">3inaroydl@gmail.com</a>
+                            <h3 class="font-semibold text-dark">Email</h3>
+                            <a href="mailto:3inaroydl@gmail.com" class="text-gray-600 hover:text-primary transition-colors">3inaroydl@gmail.com</a>
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i class="fa-solid fa-phone text-2xl text-neon-blue mr-4"></i>
+                        <i class="fas fa-phone text-2xl text-primary mr-4"></i>
                         <div>
-                            <h3 class="font-semibold text-text-primary">Phone</h3>
-                            <a href="tel:+989178719056" class="text-text-secondary hover:text-neon-blue transition-colors">+989178719056</a>
+                            <h3 class="font-semibold text-dark">Phone</h3>
+                            <a href="tel:+989178719056" class="text-gray-600 hover:text-primary transition-colors">+989178719056</a>
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i class="fa-solid fa-location-dot text-2xl text-neon-blue mr-4"></i>
+                        <i class="fas fa-map-marker-alt text-2xl text-primary mr-4"></i>
                         <div>
-                            <h3 class="font-semibold text-text-primary">Location</h3>
-                            <p class="text-text-secondary">Shiraz, Iran</p>
+                            <h3 class="font-semibold text-dark">Location</h3>
+                            <p class="text-gray-600">Shiraz, Iran</p>
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <i class="fa-solid fa-globe text-2xl text-neon-blue mr-4"></i>
+                        <i class="fas fa-briefcase text-2xl text-primary mr-4"></i>
                         <div>
-                            <h3 class="font-semibold text-text-primary">Availability</h3>
-                            <p class="text-text-secondary">Remote, Hybrid, On-site</p>
+                            <h3 class="font-semibold text-dark">Availability</h3>
+                            <p class="text-gray-600">Remote, Hybrid, On-site</p>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <h3 class="font-semibold text-text-primary mb-4">Connect With Me</h3>
+                    <h3 class="font-semibold text-dark mb-4">Connect With Me</h3>
                     <div class="flex justify-center space-x-6">
-                        <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="glass-dark p-3 rounded-full text-neon-blue hover:text-neon-purple transition-colors">
-                            <i class="fa-brands fa-github text-xl"></i>
+                        <a href="https://github.com/3ina" target="_blank" rel="noopener noreferrer" class="bg-gray-100 p-3 rounded-full text-gray-600 hover:text-primary hover:bg-gray-200 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="glass-dark p-3 rounded-full text-neon-blue hover:text-neon-purple transition-colors">
-                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        <a href="https://www.linkedin.com/in/sinaroydel/" target="_blank" rel="noopener noreferrer" class="bg-gray-100 p-3 rounded-full text-gray-600 hover:text-primary hover:bg-gray-200 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -833,22 +634,44 @@
     </section>
 
     <!-- Footer -->
-    <footer class="glass-dark py-8 px-4">
+    <footer class="bg-dark text-white py-8 px-4">
         <div class="max-w-6xl mx-auto text-center">
-            <p class="text-text-secondary mb-2">© </p>
+            <p>&copy; 2025 Sina Roydel. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-
+        
+        // Add animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
